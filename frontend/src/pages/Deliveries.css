@@ -1,0 +1,88 @@
+.deliveries-container {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.deliveries-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.deliveries-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.deliveries-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deliveries-form button:hover {
+  background-color: #0056b3;
+}
+
+.deliveries-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.delivery-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.delivery-item span {
+  flex: 1;
+  text-align: center;
+}
+
+.delivery-item .edit-btn,
+.delivery-item .delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delivery-item .edit-btn {
+  background-color: #ffc107;
+  color: #000;
+  margin-right: 5px;
+}
+
+.delivery-item .edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delivery-item .delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delivery-item .delete-btn:hover {
+  background-color: #bd2130;
+}
