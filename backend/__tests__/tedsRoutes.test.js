@@ -7,16 +7,16 @@ app.use(express.json());
 app.use("/api/teds", tedsRoutes);
 
 describe("API Endpoints", () => {
-  it("should return OK for healthcheck", async () => {
+  it("Deve retornar OK para verificação do HealthCheck", async () => {
     const res = await request(app).get("/api/teds/healthcheck");
     expect(res.statusCode).toBe(200);
     expect(res.body.status).toBe("OK");
   });
 
-  it("should reject login with invalid credentials", async () => {
+  it("Deve rejeitar o login com credenciais inválidas", async () => {
     const res = await request(app)
       .post("/api/teds/login")
-      .send({ email: "invalid@user.com", password: "wrongpassword" });
+      .send({ email: "aluno2@teste.com", password: "teste" });
     expect(res.statusCode).toBe(401);
     expect(res.body.message).toBe("Credenciais inválidas.");
   });
