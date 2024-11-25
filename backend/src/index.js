@@ -15,5 +15,5 @@ app.get("/api/teds/healthcheck", (req, res) => {
 app.use("/api/teds", require("./routes/tedsRoutes"));
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });

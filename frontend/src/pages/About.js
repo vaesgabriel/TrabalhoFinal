@@ -10,7 +10,7 @@ function About() {
       <h1>Sobre os Desenvolvedores</h1>
       <div className="developers">
         <div className="developer-card">
-          <h2>Gabriel</h2>
+          <h2> Gabriel de Lima Vaes </h2>
           <p>
             <strong>Email:</strong> 199650@upf.br
           </p>
@@ -20,7 +20,7 @@ function About() {
           </p>
         </div>
         <div className="developer-card">
-          <h2>Daniel</h2>
+          <h2> Daniel Gado Segalotto </h2>
           <p>
             <strong>Email:</strong> 199663@upf.br
           </p>

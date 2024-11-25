@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require("../database");
 const jwt = require("jsonwebtoken");
 
+// Middleware para autenticação usando JWT.
 const authenticateJWT = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
@@ -21,16 +22,18 @@ const authenticateJWT = (req, res, next) => {
   }
 };
 
+// Rota para o healthcheck.
 router.get("/healthcheck", (req, res) => {
   res.status(200).json({ status: "OK", timestamp: new Date() });
 });
 
+// Rota de login que valida as credenciais e retorna um token JWT.
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
   if (email === "aluno@teste.com" && password === "teste") {
     try {
       const token = jwt.sign({ email }, process.env.JWT_SECRET, {
-        expiresIn: "1h",
+        expiresIn: "1h", 
       });
       res.status(200).json({ token });
     } catch (error) {
@@ -42,6 +45,7 @@ router.post("/login", (req, res) => {
   }
 });
 
+// Rota para listar entregas com paginação.
 router.get("/deliveries", async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
   const offset = (page - 1) * limit;
@@ -58,8 +62,9 @@ router.get("/deliveries", async (req, res) => {
   }
 });
 
+// Rota para criar uma nova entrega.
 router.post("/deliveries", async (req, res) => {
-  const { customer_name, address, order_details, status } = req.body;
+  const { customer_name, address, order_details, status } = req.body; 
   console.log("Dados recebidos para criação de entrega:", req.body);
 
   try {
@@ -75,6 +80,7 @@ router.post("/deliveries", async (req, res) => {
   }
 });
 
+// Rota para atualizar uma entrega existente.
 router.put("/deliveries/:id", async (req, res) => {
   const { id } = req.params;
   const { customer_name, address, order_details, status } = req.body;
@@ -91,6 +97,7 @@ router.put("/deliveries/:id", async (req, res) => {
   }
 });
 
+// Rota para excluir uma entrega existente.
 router.delete("/deliveries/:id", async (req, res) => {
   const { id } = req.params;
 
